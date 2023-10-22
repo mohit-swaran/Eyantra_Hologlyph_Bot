@@ -1,0 +1,5 @@
+[console_scripts]
+Go-To-Goal_Node = hb_task_1b.t_gtg:main
+hb_task1b_controller = hb_task_1b.controller:main
+service_node = hb_task_1b.service_node:main
+

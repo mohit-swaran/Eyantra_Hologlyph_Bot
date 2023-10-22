@@ -1,0 +1,26 @@
+[5.039s] Invoking command in '/home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b': PYTHONPATH=/home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b/prefix_override:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b/build --no-deps install_data
+[5.360s] running develop
+[5.373s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[5.373s]   warnings.warn(
+[5.386s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[5.386s]   warnings.warn(
+[5.529s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 11.4.1ubuntu1 is an invalid version and will not be supported in a future release
+[5.529s]   warnings.warn(
+[5.530s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 2.22.1ubuntu1 is an invalid version and will not be supported in a future release
+[5.530s]   warnings.warn(
+[5.659s] running egg_info
+[5.659s] writing hb_task_1b.egg-info/PKG-INFO
+[5.659s] writing dependency_links to hb_task_1b.egg-info/dependency_links.txt
+[5.659s] writing entry points to hb_task_1b.egg-info/entry_points.txt
+[5.659s] writing requirements to hb_task_1b.egg-info/requires.txt
+[5.660s] writing top-level names to hb_task_1b.egg-info/top_level.txt
+[5.662s] reading manifest file 'hb_task_1b.egg-info/SOURCES.txt'
+[5.711s] writing manifest file 'hb_task_1b.egg-info/SOURCES.txt'
+[5.713s] running build_ext
+[5.713s] Creating /home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/lib/python3.10/site-packages/hb-task-1b.egg-link (link to .)
+[5.714s] Installing hb_task1b_controller script to /home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/lib/hb_task_1b
+[5.714s] Installing service_node script to /home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/lib/hb_task_1b
+[5.714s] 
+[5.714s] Installed /home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b
+[5.714s] running install_data
+[5.748s] Invoked command in '/home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b/prefix_override:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task1b_ws/build/hb_task_1b/build --no-deps install_data

@@ -1,0 +1,24 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 11.4.1ubuntu1 is an invalid version and will not be supported in a future release
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 2.22.1ubuntu1 is an invalid version and will not be supported in a future release
+  warnings.warn(
+running egg_info
+writing hb_task2b.egg-info/PKG-INFO
+writing dependency_links to hb_task2b.egg-info/dependency_links.txt
+writing entry points to hb_task2b.egg-info/entry_points.txt
+writing requirements to hb_task2b.egg-info/requires.txt
+writing top-level names to hb_task2b.egg-info/top_level.txt
+reading manifest file 'hb_task2b.egg-info/SOURCES.txt'
+writing manifest file 'hb_task2b.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages/hb-task2b.egg-link (link to .)
+Installing controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+Installing nextgoalpub script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+
+Installed /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b
+running install_data

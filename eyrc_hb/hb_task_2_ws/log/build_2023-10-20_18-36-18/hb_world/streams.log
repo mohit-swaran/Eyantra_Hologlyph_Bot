@@ -1,0 +1,15 @@
+[1.993s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world -- -j8 -l8
+[2.159s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world -- -j8 -l8
+[2.512s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world
+[2.553s] -- Install configuration: ""
+[2.553s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//launch
+[2.555s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//worlds
+[2.555s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models
+[2.556s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/ground_surface
+[2.556s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/ground_surface/meshes
+[2.556s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/arena
+[2.556s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/arena/meshes
+[2.556s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/e_camera
+[2.557s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world//models/e_camera/meshes
+[2.557s] -- Installing: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.dsv
+[2.578s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world

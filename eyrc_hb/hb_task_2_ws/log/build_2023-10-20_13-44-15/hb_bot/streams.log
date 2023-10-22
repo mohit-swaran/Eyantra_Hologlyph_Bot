@@ -1,0 +1,9 @@
+[0.502s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.228s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[1.286s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot
+[1.300s] -- Install configuration: ""
+[1.300s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch
+[1.300s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes
+[1.300s] -- Up-to-date: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf
+[1.301s] -- Installing: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv
+[1.304s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot

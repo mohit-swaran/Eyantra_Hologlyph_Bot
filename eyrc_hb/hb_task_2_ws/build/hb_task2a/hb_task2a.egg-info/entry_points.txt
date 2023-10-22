@@ -1,0 +1,6 @@
+[console_scripts]
+ar_uco_detector = hb_task2a.feedback:main
+hb_controller = hb_task2a.controller:main
+service_node = hb_task2a.service_node:main
+test_cv = hb_task2a.test:main
+

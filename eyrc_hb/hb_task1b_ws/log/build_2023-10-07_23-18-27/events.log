@@ -1,0 +1,11 @@
+[0.000000] (-) TimerEvent: {}
+[0.000199] (hb_task_1b) JobQueued: {'identifier': 'hb_task_1b', 'dependencies': OrderedDict()}
+[0.000308] (my_robot_interfaces) JobQueued: {'identifier': 'my_robot_interfaces', 'dependencies': OrderedDict()}
+[0.000351] (hb_task_1b) JobStarted: {'identifier': 'hb_task_1b'}
+[0.098842] (my_robot_interfaces) JobStarted: {'identifier': 'my_robot_interfaces'}
+[0.099019] (-) TimerEvent: {}
+[0.199331] (-) TimerEvent: {}
+[0.290746] (hb_task_1b) JobEnded: {'identifier': 'hb_task_1b', 'rc': 0}
+[0.291835] (my_robot_interfaces) JobEnded: {'identifier': 'my_robot_interfaces', 'rc': 'SIGINT'}
+[0.299470] (-) TimerEvent: {}
+[0.302403] (-) EventReactorShutdown: {}

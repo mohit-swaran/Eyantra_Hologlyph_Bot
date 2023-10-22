@@ -1,0 +1,11 @@
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+warning: install_data: setup script did not provide a directory for ' (os.path.join('share', package_name,'urdf'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'meshes'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'scripts'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'worlds'), glob('launch/*.launch.py')),' -- installing right in '/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b'
+
+error: can't copy ' (os.path.join('share', package_name,'urdf'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'meshes'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'scripts'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'worlds'), glob('launch/*.launch.py')),': doesn't exist or not a regular file

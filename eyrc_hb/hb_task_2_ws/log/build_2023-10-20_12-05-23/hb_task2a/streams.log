@@ -1,0 +1,28 @@
+[1.676s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build --no-deps install_data
+[1.964s] running develop
+[2.255s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.255s]   warnings.warn(
+[2.257s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.257s]   warnings.warn(
+[2.464s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 11.4.1ubuntu1 is an invalid version and will not be supported in a future release
+[2.464s]   warnings.warn(
+[2.465s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 2.22.1ubuntu1 is an invalid version and will not be supported in a future release
+[2.465s]   warnings.warn(
+[2.594s] running egg_info
+[2.594s] writing hb_task2a.egg-info/PKG-INFO
+[2.595s] writing dependency_links to hb_task2a.egg-info/dependency_links.txt
+[2.595s] writing entry points to hb_task2a.egg-info/entry_points.txt
+[2.595s] writing requirements to hb_task2a.egg-info/requires.txt
+[2.595s] writing top-level names to hb_task2a.egg-info/top_level.txt
+[2.599s] reading manifest file 'hb_task2a.egg-info/SOURCES.txt'
+[2.600s] writing manifest file 'hb_task2a.egg-info/SOURCES.txt'
+[2.602s] running build_ext
+[2.602s] Creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb-task2a.egg-link (link to .)
+[2.604s] Installing ar_uco_detector script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.604s] Installing hb_controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.604s] Installing service_node script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.604s] Installing test_cv script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.605s] 
+[2.605s] Installed /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a
+[2.605s] running install_data
+[2.723s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build --no-deps install_data

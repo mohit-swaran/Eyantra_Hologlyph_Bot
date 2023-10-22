@@ -1,0 +1,23 @@
+import cv2
+
+
+# Load the image
+image = cv2.imread("image.jpg")
+
+# Create a dictionary object
+dictionary = cv2.aruco.Dictionary(cv2.aruco.DICT_4X4_50,50)
+
+# Create a detector parameters object
+detector_parameters = cv2.aruco.DetectorParameters()
+
+# Detect ArUco markers in the image
+corners, ids, rejected_img_points = cv2.aruco.detectMarkers(image, dictionary, parameters=detector_parameters)
+
+# Draw the detected ArUco markers on the image
+if ids is not None:
+    for i in range(len(ids)):
+        cv2.rectangle(image, (corners[i][0][0][0], corners[i][0][0][1]), (corners[i][0][2][0], corners[i][0][2][1]), (0, 255, 0), 2)
+
+# Display the image
+cv2.imshow("Image", image)
+cv2.waitKey(0)

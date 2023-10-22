@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/hb_task_1b/hb_task_1b.egg-info/PKG-INFO
+writing dependency_links to ../../build/hb_task_1b/hb_task_1b.egg-info/dependency_links.txt
+writing entry points to ../../build/hb_task_1b/hb_task_1b.egg-info/entry_points.txt
+writing requirements to ../../build/hb_task_1b/hb_task_1b.egg-info/requires.txt
+writing top-level names to ../../build/hb_task_1b/hb_task_1b.egg-info/top_level.txt
+reading manifest file '../../build/hb_task_1b/hb_task_1b.egg-info/SOURCES.txt'
+writing manifest file '../../build/hb_task_1b/hb_task_1b.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+running install_data
+copying urdf/hb_bot.urdf.xacro -> /home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/share/hb_task_1b/urdf
+copying urdf/materials.xacro -> /home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b/share/hb_task_1b/urdf
+warning: install_data: setup script did not provide a directory for ' (os.path.join('share', package_name,'urdf'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'meshes'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'scripts'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'worlds'), glob('launch/*.launch.py')),' -- installing right in '/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b'
+
+error: can't copy ' (os.path.join('share', package_name,'urdf'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'meshes'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'scripts'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'worlds'), glob('launch/*.launch.py')),': doesn't exist or not a regular file

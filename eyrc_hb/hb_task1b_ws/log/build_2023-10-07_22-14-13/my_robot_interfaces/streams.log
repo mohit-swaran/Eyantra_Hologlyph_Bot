@@ -1,0 +1,1 @@
+[1.896s] Invoking command in '/home/mohit/eyrc_hb/hb_task1b_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task1a_ws/install/hb_task_1a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task1b_ws/build/my_robot_interfaces -- -j8 -l8
