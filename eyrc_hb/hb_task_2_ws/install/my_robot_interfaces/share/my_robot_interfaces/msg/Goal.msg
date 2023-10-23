@@ -1,4 +1,1 @@
-int64 bot_id
-float64[] x
-float64[] y
-float64 theta
+/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces/msg/Goal.msg

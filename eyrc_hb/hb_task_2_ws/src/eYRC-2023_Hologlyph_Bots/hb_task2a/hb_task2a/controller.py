@@ -29,8 +29,10 @@
 ################### IMPORT MODULES #######################
 
 import rclpy
+import numpy as np
 from rclpy.node import Node
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Pose2D
+from geometry_msgs.msg import Wrench
 from nav_msgs.msg import Odometry
 import time
 import math
@@ -56,6 +58,11 @@ class HBController(Node):
         
         # Initialze Publisher and Subscriber
         # NOTE: You are strictly NOT-ALLOWED to use "cmd_vel" or "odom" topics in this task
+        self.vel_left = self.create_publisher(Wrench,'/hb_bot_1/left_wheel_force',10)
+        self.vel_right = self.create_publisher(Wrench,'/hb_bot_1/right_wheel_force',10)
+        self.vel_rear = self.create_publisher(Wrench,'/hb_bot_1/rear_wheel_force',10)
+        self.odom_sub = self.create_subscription(Odometry,'hb_bot_1/odom_pose',self.odometryCb,10)
+        self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.inverse_kinematics,10)
 	    #	Use the below given topics to generate motion for the robot.
 	    #   /hb_bot_1/left_wheel_force,
 	    #   /hb_bot_1/right_wheel_force,
@@ -66,6 +73,7 @@ class HBController(Node):
 
         # For maintaining control loop rate.
         self.rate = self.create_rate(100)
+        self.kp_linear = 0.5
 
 
         # client for the "next_goal" service
@@ -79,8 +87,18 @@ class HBController(Node):
         self.req.request_goal = request_goal
         self.future = self.cli.call_async(self.req)
         
+    def odometryCb(self, msg):
+        # Extract pose data from Odometry message
+        orientation = msg.pose.pose.orientation
+        (roll, pitch, yaw) = euler_from_quaternion([orientation.x, orientation.y, orientation.z, orientation.w])
 
-    def inverse_kinematics():
+        self.hb_x = msg.pose.pose.position.x
+        self.hb_y = msg.pose.pose.position.y
+        self.hb_theta = yaw
+        #print(self.hb_x,self.hb_y)
+        
+
+    def inverse_kinematics(self,pose):
         ############ ADD YOUR CODE HERE ############
 
         # INSTRUCTIONS & HELP : 
@@ -88,7 +106,17 @@ class HBController(Node):
         #	Process it further to find what proportions of that effort should be given to 3 individuals wheels !!
         #	Publish the calculated efforts to actuate robot by applying force vectors on provided topics
         ############################################
-        pass
+        self.x_a = pose.x
+        self.y_a = pose.y
+        error_fb_x = 250.0 - self.x_a 
+        error_fb_y = 250.0 - self.y_a
+        #print(error_fb_x,error_fb_y)
+        s1 = [-0.33,-0.33,0.67] #sidemotion
+        s2 = [0.58,-0.58,0]     #forwardmotion
+        s3 = [0.33,0.33,0.33]   #rotationmotion
+        
+        
+        
 
 
 def main(args=None):
@@ -118,15 +146,20 @@ def main(args=None):
                 theta_goal  = response.theta_goal
                 hb_controller.flag = response.end_of_list
                 ####################################################
-                
                 # Calculate Error from feedback
-
+        
                 # Change the frame by using Rotation Matrix (If you find it required)
 
                 # Calculate the required velocity of bot for the next iteration(s)
                 
                 # Find the required force vectors for individual wheels from it.(Inverse Kinematics)
-
+                cs_vel = Wrench()
+                cs_vel.force.y =  hb_controller.w_1
+                hb_controller.vel_right.publish(cs_vel)
+                cs_vel.force.y = hb_controller.w_2
+                hb_controller.vel_left.publish(cs_vel)
+                cs_vel.force.y = hb_controller.w_3
+                hb_controller.vel_rear.publish(cs_vel)
                 # Apply appropriate force vectors
 
                 # Modify the condition to Switch to Next goal (given position in pixels instead of meters)

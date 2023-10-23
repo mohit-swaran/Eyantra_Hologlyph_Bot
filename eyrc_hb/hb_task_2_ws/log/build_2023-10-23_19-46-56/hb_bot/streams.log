@@ -1,0 +1,33 @@
+[0.157s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot
+[0.982s] -- The C compiler identification is GNU 11.4.0
+[0.983s] -- The CXX compiler identification is GNU 11.4.0
+[0.983s] -- Detecting C compiler ABI info
+[0.983s] -- Detecting C compiler ABI info - done
+[1.001s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.001s] -- Detecting C compile features
+[1.003s] -- Detecting C compile features - done
+[1.008s] -- Detecting CXX compiler ABI info
+[1.173s] -- Detecting CXX compiler ABI info - done
+[1.198s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.198s] -- Detecting CXX compile features
+[1.201s] -- Detecting CXX compile features - done
+[1.221s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[1.221s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[1.221s]   has asked CMake to find a package configuration file provided by
+[1.221s]   "ament_cmake", but CMake did not find one.
+[1.221s] 
+[1.222s]   Could not find a package configuration file provided by "ament_cmake" with
+[1.222s]   any of the following names:
+[1.222s] 
+[1.222s]     ament_cmakeConfig.cmake
+[1.222s]     ament_cmake-config.cmake
+[1.222s] 
+[1.222s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[1.223s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[1.223s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[1.223s]   has been installed.
+[1.223s] 
+[1.223s] [0m
+[1.223s] -- Configuring incomplete, errors occurred!
+[1.223s] See also "/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot/CMakeFiles/CMakeOutput.log".
+[1.243s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '1': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot

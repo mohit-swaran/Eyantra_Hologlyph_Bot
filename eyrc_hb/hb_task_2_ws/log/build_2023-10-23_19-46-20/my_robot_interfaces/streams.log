@@ -1,0 +1,33 @@
+[0.701s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces
+[2.521s] -- The C compiler identification is GNU 11.4.0
+[4.564s] -- The CXX compiler identification is GNU 11.4.0
+[4.715s] -- Detecting C compiler ABI info
+[5.058s] -- Detecting C compiler ABI info - done
+[5.070s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.083s] -- Detecting C compile features
+[5.122s] -- Detecting C compile features - done
+[5.131s] -- Detecting CXX compiler ABI info
+[5.345s] -- Detecting CXX compiler ABI info - done
+[5.361s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[5.362s] -- Detecting CXX compile features
+[5.363s] -- Detecting CXX compile features - done
+[5.403s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[5.403s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[5.403s]   has asked CMake to find a package configuration file provided by
+[5.403s]   "ament_cmake", but CMake did not find one.
+[5.403s] 
+[5.403s]   Could not find a package configuration file provided by "ament_cmake" with
+[5.404s]   any of the following names:
+[5.404s] 
+[5.404s]     ament_cmakeConfig.cmake
+[5.404s]     ament_cmake-config.cmake
+[5.405s] 
+[5.405s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[5.405s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[5.405s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[5.405s]   has been installed.
+[5.405s] 
+[5.405s] [0m
+[5.405s] -- Configuring incomplete, errors occurred!
+[5.406s] See also "/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces/CMakeFiles/CMakeOutput.log".
+[5.417s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces' returned '1': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces

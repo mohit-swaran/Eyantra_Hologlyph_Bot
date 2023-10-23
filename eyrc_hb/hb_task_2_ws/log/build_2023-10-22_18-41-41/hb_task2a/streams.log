@@ -1,0 +1,31 @@
+[1.722s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2a build --build-base /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build install --record /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log --single-version-externally-managed
+[2.067s] running egg_info
+[2.068s] writing ../../../build/hb_task2a/hb_task2a.egg-info/PKG-INFO
+[2.069s] writing dependency_links to ../../../build/hb_task2a/hb_task2a.egg-info/dependency_links.txt
+[2.069s] writing entry points to ../../../build/hb_task2a/hb_task2a.egg-info/entry_points.txt
+[2.069s] writing requirements to ../../../build/hb_task2a/hb_task2a.egg-info/requires.txt
+[2.069s] writing top-level names to ../../../build/hb_task2a/hb_task2a.egg-info/top_level.txt
+[2.075s] reading manifest file '../../../build/hb_task2a/hb_task2a.egg-info/SOURCES.txt'
+[2.077s] writing manifest file '../../../build/hb_task2a/hb_task2a.egg-info/SOURCES.txt'
+[2.077s] running build
+[2.077s] running build_py
+[2.078s] copying hb_task2a/test.py -> /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build/lib/hb_task2a
+[2.078s] running install
+[2.078s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.078s]   warnings.warn(
+[2.078s] running install_lib
+[2.079s] copying /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build/lib/hb_task2a/test.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a
+[2.080s] byte-compiling /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a/test.py to test.cpython-310.pyc
+[2.081s] byte-compiling /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a/feedback.py to feedback.cpython-310.pyc
+[2.081s] Sorry: IndentationError: expected an indented block after function definition on line 33 (feedback.py, line 38)
+[2.082s] running install_data
+[2.083s] running install_egg_info
+[2.086s] removing '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a-0.0.0-py3.10.egg-info' (and everything under it)
+[2.086s] Copying ../../../build/hb_task2a/hb_task2a.egg-info to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages/hb_task2a-0.0.0-py3.10.egg-info
+[2.088s] running install_scripts
+[2.112s] Installing ar_uco_detector script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.113s] Installing hb_controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.113s] Installing service_node script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.113s] Installing test_cv script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/hb_task2a
+[2.114s] writing list of installed files to '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log'
+[2.149s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2a build --build-base /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build install --record /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/install.log --single-version-externally-managed

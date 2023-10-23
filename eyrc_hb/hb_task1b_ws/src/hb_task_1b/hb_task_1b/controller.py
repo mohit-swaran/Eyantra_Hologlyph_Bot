@@ -83,7 +83,7 @@ def main(args=None):
                 error_theta_global = theta_d - ebot_controller.hb_theta
             # Calculate the global angle error using atan2
             
-                print(f"goal_x: {x_d} y_goal:{y_d} theta{ebot_controller.hb_theta}")
+                #print(f"goal_x: {x_d} y_goal:{y_d} theta{ebot_controller.hb_theta}")
 
                 twist = Twist()
                 
@@ -94,6 +94,7 @@ def main(args=None):
                 twist.linear.x = linear_vel_x
                 twist.linear.y = linear_vel_y
                 twist.angular.z = angular_vel_z
+                print(twist.linear.x ,twist.linear.y)
                 
             # Checking if both x and y errors are within their respective tolerances
                 if abs(error_x_global) < ebot_controller.goal_tolerance_x and abs(error_y_global) < ebot_controller.goal_tolerance_y:

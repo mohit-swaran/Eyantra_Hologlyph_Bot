@@ -1,1 +1,1 @@
-from my_robot_interfaces.srv._next_goal import NextGoal  # noqa: F401
+/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/srv/__init__.py

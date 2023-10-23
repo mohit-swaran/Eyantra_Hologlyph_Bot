@@ -1,8 +1,9 @@
 import rclpy
+import cv2 
+import numpy as np
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-import cv2 
 from geometry_msgs.msg import Pose2D
 
 class ArUcoDetector(Node):
@@ -15,9 +16,10 @@ class ArUcoDetector(Node):
             10
         )
         self.cv_bridge = CvBridge()
-        self.aruco_pub = self.create_publisher(Pose2D, '/detected_aruco', 10)
+        self.pose_pub = self.create_publisher(Pose2D, '/detected_aruco', 10)
         self.aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_100)
         self.aruco_params = cv2.aruco.DetectorParameters()
+
 
     def image_callback(self, msg):
         try:
@@ -25,25 +27,29 @@ class ArUcoDetector(Node):
         except Exception as e:
             self.get_logger().error('Error converting ROS Image to OpenCV: %s' % str(e))
             return
-        
-        grayscale_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-        _,threshold =cv2.threshold(grayscale_image, 127,255,cv2.THRESH_BINARY)
-        # Detect ArUco markers
+
+        _, threshold = cv2.threshold(cv_image, 127, 255, cv2.THRESH_BINARY)
         corners, ids, _ = cv2.aruco.detectMarkers(threshold, self.aruco_dict, parameters=self.aruco_params)
 
-        # If markers are found, you can iterate over them
         if ids is not None:
             for i in range(len(ids)):
-                # Extract the ID of the ArUco marker
                 id = ids[i]
+                marker_corners = corners[i][0]
+                center_x = int(np.mean(marker_corners[:, 0]))
+                center_y = int(np.mean(marker_corners[:, 1]))
+                cv2.circle(cv_image, (center_x, center_y), radius=4, color=(0, 0, 255), thickness=-1)
+                cv2.aruco.drawDetectedMarkers(cv_image,corners,ids)
 
-                # Draw a rectangle and ArUco marker ID on the image
-                cv2.aruco.drawDetectedMarkers(cv_image, corners,ids)
-                print(ids)
-                # Publish the detected ArUco ID as a Pose2D message
-                pose_msg = Pose2D()
+                if id == 1:  # Filter by ArUco marker ID, e.g., ID 1
+    
+                    # Publish the detected ArUco ID and center as a Pose2D message
+                    pose_msg = Pose2D()
+                    pose_msg.x = float(center_x)
+                    pose_msg.y = float(center_y)
+                    pose_msg.theta = 0.0
+                    self.pose_pub.publish(pose_msg)
+                    print(center_x, center_y)
 
-        # Display the CV image window with ArUco markers and IDs
         cv2.imshow('ProcessedImage', cv_image)
         cv2.waitKey(1)
 
@@ -60,4 +66,27 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
- 
+
+def main(args=None):
+    rclpy.init(args=args)
+    aruco_detector = ArUcoDetector()
+    try:
+        rclpy.spin(aruco_detector)
+    except KeyboardInterrupt:
+        pass
+
+    aruco_detector.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,32 @@
+[0.647s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world
+[0.735s] -- The C compiler identification is GNU 11.4.0
+[0.812s] -- The CXX compiler identification is GNU 11.4.0
+[0.824s] -- Detecting C compiler ABI info
+[0.937s] -- Detecting C compiler ABI info - done
+[0.955s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.955s] -- Detecting C compile features
+[0.956s] -- Detecting C compile features - done
+[0.962s] -- Detecting CXX compiler ABI info
+[1.074s] -- Detecting CXX compiler ABI info - done
+[1.085s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.086s] -- Detecting CXX compile features
+[1.087s] -- Detecting CXX compile features - done
+[1.101s] [31mCMake Error at CMakeLists.txt:9 (find_package):
+[1.102s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[1.102s]   has asked CMake to find a package configuration file provided by
+[1.102s]   "ament_cmake", but CMake did not find one.
+[1.102s] 
+[1.102s]   Could not find a package configuration file provided by "ament_cmake" with
+[1.102s]   any of the following names:
+[1.102s] 
+[1.103s]     ament_cmakeConfig.cmake
+[1.103s]     ament_cmake-config.cmake
+[1.103s] 
+[1.103s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[1.104s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[1.104s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[1.104s]   has been installed.
+[1.104s] 
+[1.105s] [0m
+[1.105s] -- Configuring incomplete, errors occurred!
+[1.105s] See also "/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world/CMakeFiles/CMakeOutput.log".

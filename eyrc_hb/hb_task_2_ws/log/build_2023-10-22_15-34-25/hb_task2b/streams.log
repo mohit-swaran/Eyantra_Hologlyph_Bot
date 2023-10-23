@@ -1,0 +1,24 @@
+[3.185s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2b': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2b build --build-base /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build install --record /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/install.log --single-version-externally-managed
+[4.153s] running egg_info
+[4.155s] writing ../../../build/hb_task2b/hb_task2b.egg-info/PKG-INFO
+[4.155s] writing dependency_links to ../../../build/hb_task2b/hb_task2b.egg-info/dependency_links.txt
+[4.156s] writing entry points to ../../../build/hb_task2b/hb_task2b.egg-info/entry_points.txt
+[4.156s] writing requirements to ../../../build/hb_task2b/hb_task2b.egg-info/requires.txt
+[4.156s] writing top-level names to ../../../build/hb_task2b/hb_task2b.egg-info/top_level.txt
+[4.166s] reading manifest file '../../../build/hb_task2b/hb_task2b.egg-info/SOURCES.txt'
+[4.169s] writing manifest file '../../../build/hb_task2b/hb_task2b.egg-info/SOURCES.txt'
+[4.170s] running build
+[4.170s] running build_py
+[4.172s] running install
+[4.173s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[4.174s]   warnings.warn(
+[4.175s] running install_lib
+[4.179s] running install_data
+[4.182s] running install_egg_info
+[4.203s] removing '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages/hb_task2b-0.0.0-py3.10.egg-info' (and everything under it)
+[4.203s] Copying ../../../build/hb_task2b/hb_task2b.egg-info to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages/hb_task2b-0.0.0-py3.10.egg-info
+[4.203s] running install_scripts
+[4.277s] Installing controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[4.278s] Installing nextgoalpub script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[4.278s] writing list of installed files to '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/install.log'
+[4.510s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2b' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/hb_task2b build --build-base /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build install --record /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/install.log --single-version-externally-managed

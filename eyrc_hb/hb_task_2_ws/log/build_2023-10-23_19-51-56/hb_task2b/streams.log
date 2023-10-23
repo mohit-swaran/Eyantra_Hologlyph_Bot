@@ -1,0 +1,37 @@
+[1.642s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data
+[1.952s] running develop
+[1.986s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[1.986s]   warnings.warn(
+[2.032s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.032s]   warnings.warn(
+[2.131s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 11.4.1ubuntu1 is an invalid version and will not be supported in a future release
+[2.131s]   warnings.warn(
+[2.132s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 2.22.1ubuntu1 is an invalid version and will not be supported in a future release
+[2.132s]   warnings.warn(
+[2.253s] running egg_info
+[2.253s] creating hb_task2b.egg-info
+[2.253s] writing hb_task2b.egg-info/PKG-INFO
+[2.254s] writing dependency_links to hb_task2b.egg-info/dependency_links.txt
+[2.254s] writing entry points to hb_task2b.egg-info/entry_points.txt
+[2.255s] writing requirements to hb_task2b.egg-info/requires.txt
+[2.255s] writing top-level names to hb_task2b.egg-info/top_level.txt
+[2.255s] writing manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[2.257s] reading manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[2.258s] writing manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[2.260s] running build_ext
+[2.261s] Creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages/hb-task2b.egg-link (link to .)
+[2.262s] Installing controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[2.262s] Installing nextgoalpub script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[2.263s] 
+[2.263s] Installed /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b
+[2.263s] running install_data
+[2.263s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index
+[2.264s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index
+[2.264s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index/packages
+[2.264s] copying resource/hb_task2b -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index/packages
+[2.264s] copying package.xml -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b
+[2.265s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[2.266s] copying launch/controller.launch.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[2.267s] copying launch/task2b.launch.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[2.267s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/scripts
+[2.312s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data

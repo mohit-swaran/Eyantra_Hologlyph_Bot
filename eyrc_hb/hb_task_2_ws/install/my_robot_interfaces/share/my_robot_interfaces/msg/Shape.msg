@@ -1,2 +1,1 @@
-float64 shape_dimension
-float64 shape_theta
+/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces/msg/Shape.msg
