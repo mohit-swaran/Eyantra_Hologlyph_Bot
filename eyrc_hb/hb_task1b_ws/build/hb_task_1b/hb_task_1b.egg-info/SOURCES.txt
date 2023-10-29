@@ -11,7 +11,6 @@ setup.py
 hb_task_1b/__init__.py
 hb_task_1b/controller.py
 hb_task_1b/service_node.py
-hb_task_1b/xc.py
 hb_task_1b.egg-info/PKG-INFO
 hb_task_1b.egg-info/SOURCES.txt
 hb_task_1b.egg-info/dependency_links.txt

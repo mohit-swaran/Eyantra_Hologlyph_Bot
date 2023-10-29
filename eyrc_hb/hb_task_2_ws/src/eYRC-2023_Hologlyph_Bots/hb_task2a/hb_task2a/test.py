@@ -41,14 +41,24 @@ class ArUcoDetector(Node):
                 cv2.aruco.drawDetectedMarkers(cv_image,corners,ids)
 
                 if id == 1:  # Filter by ArUco marker ID, e.g., ID 1
-    
+                    scale_x = 0.04
+                    scale_y = 0.04
+                    translation=np.array([-250*scale_x,-250*scale_y])
+                    pixel_coor =np.array([center_x,center_y,1])
+                    tf_matrix=np.array([
+                                        [scale_x,0,translation[0]],
+                                        [0,scale_y,translation[1]],
+                                        [0,0,1]
+                                        ])
+                    homogenous_meter_coor =np.dot(tf_matrix,pixel_coor)
+                    x , y ,_ = homogenous_meter_coor 
                     # Publish the detected ArUco ID and center as a Pose2D message
                     pose_msg = Pose2D()
-                    pose_msg.x = float(center_x)
-                    pose_msg.y = float(center_y)
+                    pose_msg.x = x
+                    pose_msg.y = y
                     pose_msg.theta = 0.0
                     self.pose_pub.publish(pose_msg)
-                    print(center_x, center_y)
+                    print(x, y)
 
         cv2.imshow('ProcessedImage', cv_image)
         cv2.waitKey(1)

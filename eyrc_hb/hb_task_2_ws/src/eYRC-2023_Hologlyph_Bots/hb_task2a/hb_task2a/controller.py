@@ -44,7 +44,8 @@ from my_robot_interfaces.srv import NextGoal
 
 
 # Initialize Global variables
-
+margin_tol_x = 2.0
+margin_tol_y = 2.0
 
 ################# ADD UTILITY FUNCTIONS HERE #################
 
@@ -61,19 +62,21 @@ class HBController(Node):
         self.vel_left = self.create_publisher(Wrench,'/hb_bot_1/left_wheel_force',10)
         self.vel_right = self.create_publisher(Wrench,'/hb_bot_1/right_wheel_force',10)
         self.vel_rear = self.create_publisher(Wrench,'/hb_bot_1/rear_wheel_force',10)
-        self.odom_sub = self.create_subscription(Odometry,'hb_bot_1/odom_pose',self.odometryCb,10)
-        self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.inverse_kinematics,10)
+        self.odom = self.create_subscription(Odometry,'/hb_bot_1/odom_pose',self.odometryCb,10)
+        self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.aruco_pose,10)
 	    #	Use the below given topics to generate motion for the robot.
 	    #   /hb_bot_1/left_wheel_force,
 	    #   /hb_bot_1/right_wheel_force,
 	    #   /hb_bot_1/left_wheel_force
 
-
-
+        self.x_a = 0
+        self.y_a = 0
+        self.kp_linear = 0.5
+        self.kp_angular = 0.5
+        
 
         # For maintaining control loop rate.
         self.rate = self.create_rate(100)
-        self.kp_linear = 0.5
 
 
         # client for the "next_goal" service
@@ -86,7 +89,7 @@ class HBController(Node):
     def send_request(self, request_goal):
         self.req.request_goal = request_goal
         self.future = self.cli.call_async(self.req)
-        
+    
     def odometryCb(self, msg):
         # Extract pose data from Odometry message
         orientation = msg.pose.pose.orientation
@@ -95,10 +98,14 @@ class HBController(Node):
         self.hb_x = msg.pose.pose.position.x
         self.hb_y = msg.pose.pose.position.y
         self.hb_theta = yaw
-        #print(self.hb_x,self.hb_y)
+
+    def aruco_pose(self,pose):
+        self.x_a = pose.x
+        self.y_a = pose.y
+        self.z_a = 0.0
         
 
-    def inverse_kinematics(self,pose):
+    def inverse_kinematics(self,linear_x,linear_y,angular_z):
         ############ ADD YOUR CODE HERE ############
 
         # INSTRUCTIONS & HELP : 
@@ -106,28 +113,25 @@ class HBController(Node):
         #	Process it further to find what proportions of that effort should be given to 3 individuals wheels !!
         #	Publish the calculated efforts to actuate robot by applying force vectors on provided topics
         ############################################
-        self.x_a = pose.x
-        self.y_a = pose.y
-        error_fb_x = 250.0 - self.x_a 
-        error_fb_y = 250.0 - self.y_a
-        #print(error_fb_x,error_fb_y)
-        s1 = [-0.33,-0.33,0.67] #sidemotion
-        s2 = [0.58,-0.58,0]     #forwardmotion
-        s3 = [0.33,0.33,0.33]   #rotationmotion
+        inverse_matrix = np.array([[-0.33,0.58,0.33],
+                                   [-0.33,-0.58,0.33],
+                                   [0.67, 0,0.33]])
+        c_speed = np.array([linear_x,linear_y,angular_z])
+        w_speed =np.dot(inverse_matrix,c_speed)
+        w1 = w_speed[0]
+        w2 = w_speed[1]
+        w3 = w_speed[2] 
+        return w1, w2, w3
         
-        
-        
-
-
 def main(args=None):
     rclpy.init(args=args)
-    
     # Create an instance of the HBController class
     hb_controller = HBController()
    
     # Send an initial request with the index from ebot_controller.index
     hb_controller.send_request(hb_controller.index)
-    
+    print("Sent Req")
+    print(hb_controller.index)
     # Main loop
     while rclpy.ok():
 
@@ -137,7 +141,7 @@ def main(args=None):
                 # response from the service call
                 response = hb_controller.future.result()
             except Exception as e:
-                hb_controller.get_logger().infselfo(
+                hb_controller.get_logger().info(
                     'Service call failed %r' % (e,))
             else:
                 #########           GOAL POSE             #########
@@ -147,30 +151,52 @@ def main(args=None):
                 hb_controller.flag = response.end_of_list
                 ####################################################
                 # Calculate Error from feedback
-        
-                # Change the frame by using Rotation Matrix (If you find it required)
+                cr_x_goal = 0.04* x_goal + (-250*0.04)
+                cr_y_goal = 0.04* y_goal + (-250*0.04)
+                error_fb_x = cr_x_goal - hb_controller.x_a
+                error_fb_y = cr_y_goal - hb_controller.y_a
+                error_fb_theta = theta_goal - hb_controller.z_a
 
+                
+                linear_x = hb_controller.kp_linear * error_fb_x * 3
+                linear_y = hb_controller.kp_linear * error_fb_y * 3
+                angular_z = hb_controller.kp_angular * error_fb_theta 
+                
+            
+                # Change the frame by using Rotation Matrix (If you find it required)
+                w1,w2,w3 = hb_controller.inverse_kinematics(linear_x,linear_y,angular_z)
+                
+                print(f'x:{hb_controller.x_a} y:{hb_controller.y_a} errx:{error_fb_x} erry:{error_fb_y} ')
                 # Calculate the required velocity of bot for the next iteration(s)
                 
                 # Find the required force vectors for individual wheels from it.(Inverse Kinematics)
-                cs_vel = Wrench()
-                cs_vel.force.y =  hb_controller.w_1
-                hb_controller.vel_right.publish(cs_vel)
-                cs_vel.force.y = hb_controller.w_2
-                hb_controller.vel_left.publish(cs_vel)
-                cs_vel.force.y = hb_controller.w_3
-                hb_controller.vel_rear.publish(cs_vel)
+                vel = Wrench()
+                
+                vel.force.y = w1
+                hb_controller.vel_right.publish(vel)
+                vel.force.y = w2
+                hb_controller.vel_left.publish(vel)
+                vel.force.y = w3
+                hb_controller.vel_rear.publish(vel)
+                #print(f'w1:{w1},w2{w2},w3{w3} g_x{g_x_pose} g_y:{g_y_pose} ')
                 # Apply appropriate force vectors
 
                 # Modify the condition to Switch to Next goal (given position in pixels instead of meters)
-                        
-                ############     DO NOT MODIFY THIS       #########
-                hb_controller.index += 1
-                if hb_controller.flag == 1 :
-                    hb_controller.index = 0
-                hb_controller.send_request(hb_controller.index)
+                if abs(error_fb_x) < margin_tol_x and abs(error_fb_y) < margin_tol_y:
+                    vel.force.y = 0.0
+                    hb_controller.vel_right.publish(vel)
+                    vel.force.y = 0.0
+                    hb_controller.vel_left.publish(vel)
+                    vel.force.y = 0.0
+                    hb_controller.vel_rear.publish(vel)
+                    ############     DO NOT MODIFY THIS       #########
+                    hb_controller.index += 1
+                    if hb_controller.flag == 1 :
+                        hb_controller.index = 0
+                        hb_controller.send_request(hb_controller.index)
                 ####################################################
-
+       
+                
         # Spin once to process callbacks
         rclpy.spin_once(hb_controller)
     

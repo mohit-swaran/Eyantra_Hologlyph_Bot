@@ -1,3 +1,4 @@
+import numpy as np
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Wrench
@@ -27,7 +28,7 @@ class HBController(Node):
         self.hb_x = msg.pose.pose.position.x
         self.hb_y = msg.pose.pose.position.y
         self.hb_theta = yaw
-        #print(f"x:{self.hb_x} y:{self.hb_y}")
+        print(f"x:{self.hb_x} y:{self.hb_y}")
     
 def main(args=None):
         rclpy.init(args=args)
@@ -35,9 +36,10 @@ def main(args=None):
         holo_c = HBController()
         
         twist =Wrench()
-        vel_r = 20.0
-        vel_l = 20.0
-        vel_rr= 20.0
+        vel_r =  -10.0
+        vel_l =  -10.0
+        vel_rr=  20.0
+        
         twist.force.y = vel_r
         holo_c.vel_right.publish(twist)
         print(f"right:{twist.force.y}")
@@ -54,4 +56,6 @@ def main(args=None):
         rclpy.shutdown()
 if __name__ == '__main__':
     main()
+        
+        
         
