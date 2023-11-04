@@ -1,61 +1,174 @@
-import numpy as np
+#! /usr/bin/env python3
+
+'''
+*****************************************************************************************
+*
+*        		===============================================
+*           		Hologlyph Bots (HB) Theme (eYRC 2023-24)
+*        		===============================================
+*
+*  This script is to implement Task 2A of Hologlyph Bots (HB) Theme (eYRC 2023-24).
+*  
+*  This software is made available on an "AS IS WHERE IS BASIS".
+*  Licensee/end user indemnifies and will keep e-Yantra indemnified from
+*  any and all claim(s) that emanate from the use of the Software or 
+*  breach of the terms of this agreement.
+*
+*****************************************************************************************
+'''
+
+
+# Team ID:		[ Team-ID ]
+# Author List:		[ Names of team members worked on this file separated by Comma: Name1, Name2, ... ]
+# Filename:		feedback.py
+# Functions:
+#			[ Comma separated list of functions in this file ]
+# Nodes:		Add your publishing and subscribing node
+
+
+################### IMPORT MODULES #######################
+
 import rclpy
+import numpy as np
 from rclpy.node import Node
+from geometry_msgs.msg import Pose2D
 from geometry_msgs.msg import Wrench
 from nav_msgs.msg import Odometry
 import time
 import math
 from tf_transformations import euler_from_quaternion
-from my_robot_interfaces.srv import NextGoal  
+from my_robot_interfaces.srv import NextGoal 
+import matplotlib.pyplot as plt            
 
+# You can add more if required
+##############################################################
+
+
+# Initialize Global variables
+margin_tol_x = 10
+margin_tol_y = 10
+max_goals = 97
+x_values = []
+y_values = []
+
+################# ADD UTILITY FUNCTIONS HERE #################
+
+##############################################################
+
+
+# Define the HBController class, which is a ROS node
 class HBController(Node):
     def __init__(self):
-        super().__init__('wheel_test')
+        super().__init__('hb_controller')
         
         # Initialze Publisher and Subscriber
         # NOTE: You are strictly NOT-ALLOWED to use "cmd_vel" or "odom" topics in this task
         self.vel_left = self.create_publisher(Wrench,'/hb_bot_1/left_wheel_force',10)
         self.vel_right = self.create_publisher(Wrench,'/hb_bot_1/right_wheel_force',10)
         self.vel_rear = self.create_publisher(Wrench,'/hb_bot_1/rear_wheel_force',10)
-        self.odom_sub =self.create_subscription(Odometry,'hb_bot_1/odom_pose',self.odometryCb,2)
-    
-    
-    def odometryCb(self, msg):
-        # Extract pose data from Odometry message
-        orientation = msg.pose.pose.orientation
-        (roll, pitch, yaw) = euler_from_quaternion([orientation.x, orientation.y, orientation.z, orientation.w])
+        self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.aruco_pose,10)
+	    #	Use the below given topics to generate motion for the robot.
+	    #   /hb_bot_1/left_wheel_force,
+	    #   /hb_bot_1/right_wheel_force,
+	    #   /hb_bot_1/left_wheel_force
 
-        self.hb_x = msg.pose.pose.position.x
-        self.hb_y = msg.pose.pose.position.y
-        self.hb_theta = yaw
-        print(f"x:{self.hb_x} y:{self.hb_y}")
+        self.x_a = 0
+        self.y_a = 0
+        self.kp_linear = 0.5
+        self.kp_angular = 0.5
+        
+
+        # For maintaining control loop rate.
+        self.rate = self.create_rate(100)
+
+
+        # client for the "next_goal" service
+        self.cli = self.create_client(NextGoal, 'next_goal')      
+        self.req = NextGoal.Request() 
+        self.index = 0
+
     
+    # Method to create a request to the "next_goal" service
+    def send_request(self, request_goal):
+        self.req.request_goal = request_goal
+        self.future = self.cli.call_async(self.req)
+    
+
+    def aruco_pose(self,pose):
+        self.x_a = pose.x
+        self.y_a = pose.y
+        self.z_a = 0.0
+        
+
+    def inverse_kinematics(self,linear_x,linear_y,angular_z):
+        ############ ADD YOUR CODE HERE ############
+
+        # INSTRUCTIONS & HELP : 
+        #	-> Use the target velocity you calculated for the robot in previous task, and
+        #	Process it further to find what proportions of that effort should be given to 3 individuals wheels !!
+        #	Publish the calculated efforts to actuate robot by applying force vectors on provided topics
+        ############################################
+        inverse_matrix = np.array([[-0.33,0.58,0.33],
+                                   [-0.33,-0.58,0.33],
+                                   [0.67, 0,0.33]])
+        c_speed = np.array([linear_x,linear_y,angular_z])
+        w_speed =np.dot(inverse_matrix,c_speed)
+        w1 = w_speed[0]
+        w2 = w_speed[1]
+        w3 = w_speed[2] 
+        return w1, w2, w3
+        
 def main(args=None):
-        rclpy.init(args=args)
-        
-        holo_c = HBController()
-        
-        twist =Wrench()
-        vel_r =  -10.0
-        vel_l =  -10.0
-        vel_rr=  20.0
-        
-        twist.force.y = vel_r
-        holo_c.vel_right.publish(twist)
-        print(f"right:{twist.force.y}")
-        twist.force.y = vel_l
-        holo_c.vel_left.publish(twist)
-        print(f"left:{twist.force.y}")
-        twist.force.y = vel_rr
-        holo_c.vel_rear.publish(twist)
-        print(f"rear:{twist.force.y}")
-        
-        
-        rclpy.spin(holo_c)
-        holo_c.destroy_node()
-        rclpy.shutdown()
+    rclpy.init(args=args)
+    # Create an instance of the HBController class
+    hb_controller = HBController()
+   
+    # Send an initial request with the index from ebot_controller.index
+    hb_controller.send_request(hb_controller.index)
+    print("Sent Req")
+    print(hb_controller.index)
+    # Main loop
+    while rclpy.ok():
+
+        # Check if the service call is done
+        if hb_controller.future.done():
+            try:
+                # response from the service call
+                response = hb_controller.future.result()
+            except Exception as e:
+                hb_controller.get_logger().info(
+                    'Service call failed %r' % (e,))
+            else:
+                if hb_controller.index <= 100 :
+                    print(hb_controller.index)
+                    #########           GOAL POSE             #########
+                    x_goal      = response.x_goal + 250
+                    y_goal      = response.y_goal + 250
+                    theta_goal  = response.theta_goal
+                    hb_controller.flag = response.end_of_list
+                    ####################################################
+                    # Calculate Error from feedback
+
+                    x_values.append(x_goal)
+                    y_values.append(y_goal)
+                    
+                    hb_controller.index += 1
+                    hb_controller.send_request(hb_controller.index)
+                    
+                    if len(x_values) == max_goals:
+                        print(f"x:{x_values} y:{y_values}")
+                        print("Plotting points")
+                        plt.scatter(x_values,y_values)
+                        plt.show()
+                        
+                         
+        # Spin once to process callbacks
+        rclpy.spin_once(hb_controller)
+    
+    # Destroy the node and shut down ROS
+    hb_controller.destroy_node()
+    rclpy.shutdown()
+
+# Entry point of the script
 if __name__ == '__main__':
     main()
-        
-        
-        

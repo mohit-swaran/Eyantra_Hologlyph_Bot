@@ -50,13 +50,13 @@ class ServiceNode(Node):
         response.x_goal = x
         response.y_goal = y
         response.theta_goal = 0.0
-        response.end_of_list = self.flag
+        response.end_of_list = self.flag                
         print (x,y)
         self.get_logger().info(f"Received request: {request.request_goal}")
         if self.logger_flag == 1:
             self.get_logger().info("Service started...")
             self.logger_flag = 0
-        time.sleep(1)
+        time.sleep(0.05)
         return response
 
 def generate_random_value(min_value=1, max_value=5):

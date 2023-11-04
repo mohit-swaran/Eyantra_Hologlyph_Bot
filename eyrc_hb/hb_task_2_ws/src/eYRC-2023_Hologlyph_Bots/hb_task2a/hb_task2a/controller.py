@@ -37,15 +37,18 @@ from nav_msgs.msg import Odometry
 import time
 import math
 from tf_transformations import euler_from_quaternion
-from my_robot_interfaces.srv import NextGoal             
+from my_robot_interfaces.srv import NextGoal 
+import matplotlib.pyplot as plt            
 
 # You can add more if required
 ##############################################################
 
 
 # Initialize Global variables
-margin_tol_x = 2.0
-margin_tol_y = 2.0
+margin_tol_x = 5
+margin_tol_y = 5
+x_values = []
+y_values = []
 
 ################# ADD UTILITY FUNCTIONS HERE #################
 
@@ -62,7 +65,6 @@ class HBController(Node):
         self.vel_left = self.create_publisher(Wrench,'/hb_bot_1/left_wheel_force',10)
         self.vel_right = self.create_publisher(Wrench,'/hb_bot_1/right_wheel_force',10)
         self.vel_rear = self.create_publisher(Wrench,'/hb_bot_1/rear_wheel_force',10)
-        self.odom = self.create_subscription(Odometry,'/hb_bot_1/odom_pose',self.odometryCb,10)
         self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.aruco_pose,10)
 	    #	Use the below given topics to generate motion for the robot.
 	    #   /hb_bot_1/left_wheel_force,
@@ -90,19 +92,11 @@ class HBController(Node):
         self.req.request_goal = request_goal
         self.future = self.cli.call_async(self.req)
     
-    def odometryCb(self, msg):
-        # Extract pose data from Odometry message
-        orientation = msg.pose.pose.orientation
-        (roll, pitch, yaw) = euler_from_quaternion([orientation.x, orientation.y, orientation.z, orientation.w])
-
-        self.hb_x = msg.pose.pose.position.x
-        self.hb_y = msg.pose.pose.position.y
-        self.hb_theta = yaw
 
     def aruco_pose(self,pose):
         self.x_a = pose.x
         self.y_a = pose.y
-        self.z_a = 0.0
+        self.theta = 0.0
         
 
     def inverse_kinematics(self,linear_x,linear_y,angular_z):
@@ -130,8 +124,7 @@ def main(args=None):
    
     # Send an initial request with the index from ebot_controller.index
     hb_controller.send_request(hb_controller.index)
-    print("Sent Req")
-    print(hb_controller.index)
+    print("Starting")
     # Main loop
     while rclpy.ok():
 
@@ -145,55 +138,59 @@ def main(args=None):
                     'Service call failed %r' % (e,))
             else:
                 #########           GOAL POSE             #########
-                x_goal      = response.x_goal
-                y_goal      = response.y_goal
+                x_goal      = response.x_goal + 250
+                y_goal      = response.y_goal + 250
                 theta_goal  = response.theta_goal
                 hb_controller.flag = response.end_of_list
                 ####################################################
                 # Calculate Error from feedback
-                cr_x_goal = 0.04* x_goal + (-250*0.04)
-                cr_y_goal = 0.04* y_goal + (-250*0.04)
-                error_fb_x = cr_x_goal - hb_controller.x_a
-                error_fb_y = cr_y_goal - hb_controller.y_a
-                error_fb_theta = theta_goal - hb_controller.z_a
+  
+                error_fb_x = x_goal - hb_controller.x_a
+                error_fb_y = y_goal - hb_controller.y_a
+                error_fb_theta = theta_goal - hb_controller.theta
 
+                linear_x = hb_controller.kp_linear * (error_fb_x*8)
+                linear_y = hb_controller.kp_linear * (error_fb_y*8) 
+                angular_z = hb_controller.kp_angular * error_fb_theta*8
                 
-                linear_x = hb_controller.kp_linear * error_fb_x * 3
-                linear_y = hb_controller.kp_linear * error_fb_y * 3
-                angular_z = hb_controller.kp_angular * error_fb_theta 
                 
-            
                 # Change the frame by using Rotation Matrix (If you find it required)
                 w1,w2,w3 = hb_controller.inverse_kinematics(linear_x,linear_y,angular_z)
                 
-                print(f'x:{hb_controller.x_a} y:{hb_controller.y_a} errx:{error_fb_x} erry:{error_fb_y} ')
+                print(f'x:{hb_controller.x_a} y:{hb_controller.y_a} g_x{x_goal} g_y{y_goal}errx:{error_fb_x} erry:{error_fb_y} ')
+        
                 # Calculate the required velocity of bot for the next iteration(s)
                 
                 # Find the required force vectors for individual wheels from it.(Inverse Kinematics)
                 vel = Wrench()
                 
-                vel.force.y = w1
-                hb_controller.vel_right.publish(vel)
                 vel.force.y = w2
+                hb_controller.vel_right.publish(vel)
+                vel.force.y = w1
                 hb_controller.vel_left.publish(vel)
                 vel.force.y = w3
                 hb_controller.vel_rear.publish(vel)
-                #print(f'w1:{w1},w2{w2},w3{w3} g_x{g_x_pose} g_y:{g_y_pose} ')
                 # Apply appropriate force vectors
-
+               
                 # Modify the condition to Switch to Next goal (given position in pixels instead of meters)
                 if abs(error_fb_x) < margin_tol_x and abs(error_fb_y) < margin_tol_y:
+                    x_values.append(hb_controller.x_a)
+                    y_values.append(hb_controller.y_a)
                     vel.force.y = 0.0
                     hb_controller.vel_right.publish(vel)
                     vel.force.y = 0.0
                     hb_controller.vel_left.publish(vel)
                     vel.force.y = 0.0
                     hb_controller.vel_rear.publish(vel)
+                    print(f"Goal{hb_controller.index} completed!")
                     ############     DO NOT MODIFY THIS       #########
                     hb_controller.index += 1
                     if hb_controller.flag == 1 :
+                        plt.scatter(x_values,y_values)
+                        print(f"x:{x_values}    y:{y_values}")
+                        plt.show()
                         hb_controller.index = 0
-                        hb_controller.send_request(hb_controller.index)
+                    hb_controller.send_request(hb_controller.index)
                 ####################################################
        
                 

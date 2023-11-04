@@ -73,9 +73,9 @@ def main(args=None):
                     'Service call failed %r' % (e,))
             else:
                 #########           GOAL POSE             #########
-                x_d     = response.x_goal
-                y_d      = response.y_goal
-                theta_d  = response.theta_goal
+                x_d     = response.x_goal + 250
+                y_d      = response.y_goal + 250
+                theta_d  = response.theta_goal + 250
                 ebot_controller.flag = response.end_of_list
                 ####################################################
                 error_x_global = x_d - ebot_controller.hb_x
