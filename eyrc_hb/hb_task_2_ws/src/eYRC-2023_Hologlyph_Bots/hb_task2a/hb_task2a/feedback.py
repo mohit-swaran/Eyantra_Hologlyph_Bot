@@ -18,14 +18,21 @@
 '''
 ################### IMPORT MODULES #######################
 import rclpy
-import cv2 
+import cv2
 import numpy as np
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Pose2D
-# Import the required modules
-##############################################################
+
+# Default Camera Matrix (for illustrative purposes, replace with actual calibration)
+cameraMatrix = np.array([[1000, 0, 320],
+                         [0, 1000, 240],
+                         [0, 0, 1]])
+
+# Default Distortion Coefficients (for illustrative purposes, replace with actual calibration)
+distCoeffs = np.array([0.0, 0.0, 0.0, 0.0, 0.0])
+
 class ArUcoDetector(Node):
     def __init__(self):
         super().__init__('aruco_detector')
@@ -40,7 +47,6 @@ class ArUcoDetector(Node):
         self.pose_pub = self.create_publisher(Pose2D, '/detected_aruco', 10)
         self.aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_100)
         self.aruco_params = cv2.aruco.DetectorParameters()
-
 
     def image_callback(self, msg):
         try:
@@ -59,25 +65,27 @@ class ArUcoDetector(Node):
                 center_x = int(np.mean(marker_corners[:, 0]))
                 center_y = int(np.mean(marker_corners[:, 1]))
                 cv2.circle(cv_image, (center_x, center_y), radius=4, color=(0, 0, 255), thickness=-1)
-                cv2.aruco.drawDetectedMarkers(cv_image,corners,ids)
+                cv2.aruco.drawDetectedMarkers(cv_image, corners, ids)
 
-                
                 if id == 1:  # Filter by ArUco marker ID, e.g., ID 1
-                    image_center_x = cv_image.shape[1] // 2
-                    angle = np.arctan2(center_y - image_center_x, center_x - image_center_x)
 
-                    # Publish the detected ArUco ID and center as a Pose2D message
+                    # Calculate the rotation angle
+                    rvec,tvec,_ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 1.0, cameraMatrix, distCoeffs)
+                    R = cv2.Rodrigues(rvec)[0]
+                    angle = np.arctan2(-R[1, 0], -R[0, 0]) 
+                    if angle < 0:
+                        angle += np.pi
+
+                    # Publish the detected ArUco ID, center, and rotation angle as a Pose2D message
                     pose_msg = Pose2D()
                     pose_msg.x = float(center_x)
                     pose_msg.y = float(center_y)
                     pose_msg.theta = angle
                     self.pose_pub.publish(pose_msg)
-                    print(center_x ,center_y,pose_msg.theta)
+                    print(f"ArUco ID: {id}, Center X: {pose_msg.x}, Center Y: {pose_msg.y}, Angle: {pose_msg.theta}")
 
         cv2.imshow('ProcessedImage', cv_image)
         cv2.waitKey(1)
-        
-    
 
 def main(args=None):
     rclpy.init(args=args)
@@ -92,4 +100,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-        

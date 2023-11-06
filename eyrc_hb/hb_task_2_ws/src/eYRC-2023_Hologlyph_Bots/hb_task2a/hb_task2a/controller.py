@@ -45,8 +45,7 @@ import matplotlib.pyplot as plt
 
 
 # Initialize Global variables
-margin_tol_x = 5
-margin_tol_y = 5
+margin_tol_linear = 1.0
 x_values = []
 y_values = []
 
@@ -73,8 +72,9 @@ class HBController(Node):
 
         self.x_a = 0
         self.y_a = 0
-        self.kp_linear = 0.5
-        self.kp_angular = 0.5
+        self.theta = 0
+        self.kp_linear = 0.57     
+        self.kp_angular = 0.6
         
 
         # For maintaining control loop rate.
@@ -96,8 +96,7 @@ class HBController(Node):
     def aruco_pose(self,pose):
         self.x_a = pose.x
         self.y_a = pose.y
-        self.theta = 0.0
-        
+        self.theta = pose.theta 
 
     def inverse_kinematics(self,linear_x,linear_y,angular_z):
         ############ ADD YOUR CODE HERE ############
@@ -107,10 +106,11 @@ class HBController(Node):
         #	Process it further to find what proportions of that effort should be given to 3 individuals wheels !!
         #	Publish the calculated efforts to actuate robot by applying force vectors on provided topics
         ############################################
-        inverse_matrix = np.array([[-0.33,0.58,0.33],
-                                   [-0.33,-0.58,0.33],
-                                   [0.67, 0,0.33]])
+        inverse_matrix = np.array([[-2,2.75,2],
+                                   [-2,-2.75,2],
+                                   [4, 0,2]])
         c_speed = np.array([linear_x,linear_y,angular_z])
+        print(c_speed)
         w_speed =np.dot(inverse_matrix,c_speed)
         w1 = w_speed[0]
         w2 = w_speed[1]
@@ -144,55 +144,55 @@ def main(args=None):
                 hb_controller.flag = response.end_of_list
                 ####################################################
                 # Calculate Error from feedback
-  
+                theta_goal = np.arctan2(x_goal,y_goal)
+                
                 error_fb_x = x_goal - hb_controller.x_a
                 error_fb_y = y_goal - hb_controller.y_a
                 error_fb_theta = theta_goal - hb_controller.theta
+                
+                linear_x = hb_controller.kp_linear * error_fb_x *3.4
+                linear_y = hb_controller.kp_linear * error_fb_y *3.4
+                angular_z = hb_controller.kp_angular * error_fb_theta * 10
+               
+        
 
-                linear_x = hb_controller.kp_linear * (error_fb_x*8)
-                linear_y = hb_controller.kp_linear * (error_fb_y*8) 
-                angular_z = hb_controller.kp_angular * error_fb_theta*8
-                
-                
                 # Change the frame by using Rotation Matrix (If you find it required)
                 w1,w2,w3 = hb_controller.inverse_kinematics(linear_x,linear_y,angular_z)
-                
-                print(f'x:{hb_controller.x_a} y:{hb_controller.y_a} g_x{x_goal} g_y{y_goal}errx:{error_fb_x} erry:{error_fb_y} ')
+
+                print(f'w2:{w2},w1{w1},w3{w3} {hb_controller.theta}{error_fb_theta}')
         
                 # Calculate the required velocity of bot for the next iteration(s)
                 
                 # Find the required force vectors for individual wheels from it.(Inverse Kinematics)
                 vel = Wrench()
-                
-                vel.force.y = w2
-                hb_controller.vel_right.publish(vel)
-                vel.force.y = w1
-                hb_controller.vel_left.publish(vel)
-                vel.force.y = w3
-                hb_controller.vel_rear.publish(vel)
-                # Apply appropriate force vectors
                
-                # Modify the condition to Switch to Next goal (given position in pixels instead of meters)
-                if abs(error_fb_x) < margin_tol_x and abs(error_fb_y) < margin_tol_y:
-                    x_values.append(hb_controller.x_a)
-                    y_values.append(hb_controller.y_a)
-                    vel.force.y = 0.0
-                    hb_controller.vel_right.publish(vel)
-                    vel.force.y = 0.0
-                    hb_controller.vel_left.publish(vel)
-                    vel.force.y = 0.0
-                    hb_controller.vel_rear.publish(vel)
+                    
+                # Apply appropriate force vectors
+                # Modify the condition to Switch to Next goal (given position in pixels instead of meters 
+                    
+                if abs(error_fb_x) < margin_tol_linear and abs(error_fb_y) < margin_tol_linear:
+                    
+                    """x_values.append(hb_controller.x_a)
+                    y_values.append(hb_controller.y_a)"""
+                    
                     print(f"Goal{hb_controller.index} completed!")
                     ############     DO NOT MODIFY THIS       #########
                     hb_controller.index += 1
                     if hb_controller.flag == 1 :
-                        plt.scatter(x_values,y_values)
+                        """plt.scatter(x_values,y_values)
                         print(f"x:{x_values}    y:{y_values}")
                         plt.show()
-                        hb_controller.index = 0
+                        hb_controller.index = 0"""
                     hb_controller.send_request(hb_controller.index)
-                ####################################################
-       
+            ####################################################
+                vel.force.y = w1
+                hb_controller.vel_left.publish(vel)
+                
+                vel.force.y = w2
+                hb_controller.vel_right.publish(vel)
+                
+                vel.force.y = w3
+                hb_controller.vel_rear.publish(vel)
                 
         # Spin once to process callbacks
         rclpy.spin_once(hb_controller)

@@ -50,20 +50,19 @@ class ServiceNode(Node):
         response.x_goal = x
         response.y_goal = y
         response.theta_goal = 0.0
-        response.end_of_list = self.flag                
-        print (x,y)
-        self.get_logger().info(f"Received request: {request.request_goal}")
+        response.end_of_list = self.flag
+        # self.get_logger().info(f"Received request: {request.request_goal}")
         if self.logger_flag == 1:
             self.get_logger().info("Service started...")
             self.logger_flag = 0
-        time.sleep(0.05)
+        print(x,y)
         return response
 
 def generate_random_value(min_value=1, max_value=5):
     return random.randint(min_value, max_value)
 
 
-def generate_hexagon(side_length=100, x_center=0, y_center=0, theta=0, num_points=100):
+def generate_hexagon(side_length=100, x_center=0, y_center=0, theta=0, num_points=50):
     print("Hexagon")
     angles = np.linspace(0, 2 * np.pi, 6, endpoint=False) + theta
     x_vertices = x_center + side_length * np.cos(angles)
@@ -79,7 +78,7 @@ def generate_hexagon(side_length=100, x_center=0, y_center=0, theta=0, num_point
     
     return x_interp.tolist(), y_interp.tolist(), theta
 
-def generate_rectangle(width=100, height=50, x_center=0, y_center=0, theta=0, num_points=100):
+def generate_rectangle(width=100, height=50, x_center=0, y_center=0, theta=0, num_points=50):
     print("Rectangle")
     half_width = width / 2
     half_height = height / 2
@@ -102,7 +101,7 @@ def generate_rectangle(width=100, height=50, x_center=0, y_center=0, theta=0, nu
     
     return x.tolist(), y.tolist(), theta
 
-def generate_triangle(side_length=100, x_center=0, y_center=0, theta=0, num_points=100):
+def generate_triangle(side_length=100, x_center=0, y_center=0, theta=0, num_points=50):
     print("Triangle")
     # Calculate the height of the equilateral triangle
     height = (np.sqrt(3) / 2) * side_length
@@ -133,7 +132,7 @@ def generate_triangle(side_length=100, x_center=0, y_center=0, theta=0, num_poin
     
     return x.tolist(), y.tolist(), theta
 
-def generate_square(side_length=100, x_center=0, y_center=0, theta=0, num_points=100):
+def generate_square(side_length=100, x_center=0, y_center=0, theta=0, num_points=50):
     print("Square")
     half_length = side_length / 2
     
@@ -165,7 +164,7 @@ def generate_square(side_length=100, x_center=0, y_center=0, theta=0, num_points
     
     return x.tolist(), y.tolist(), theta
 
-def generate_decagon(side_length=100, x_center=0, y_center=0, theta=0, num_points=100):
+def generate_decagon(side_length=100, x_center=0, y_center=0, theta=0, num_points=50):
     print("Decagon")
     angles = np.linspace(0, 2 * np.pi, 10, endpoint=False) + theta
     x_vertices = x_center + side_length * np.cos(angles)
