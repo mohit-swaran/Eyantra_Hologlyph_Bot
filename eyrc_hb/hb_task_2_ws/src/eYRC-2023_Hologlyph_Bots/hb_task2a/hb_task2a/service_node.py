@@ -55,6 +55,7 @@ class ServiceNode(Node):
         if self.logger_flag == 1:
             self.get_logger().info("Service started...")
             self.logger_flag = 0
+            time.sleep(0.1)
         print(x,y)
         return response
 

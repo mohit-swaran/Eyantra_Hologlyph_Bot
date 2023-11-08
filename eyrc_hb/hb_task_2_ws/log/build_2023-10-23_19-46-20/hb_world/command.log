@@ -1,2 +1,0 @@
-Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world
-Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '1': /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world

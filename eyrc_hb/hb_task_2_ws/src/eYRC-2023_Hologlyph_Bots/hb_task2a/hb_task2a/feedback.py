@@ -82,7 +82,7 @@ class ArUcoDetector(Node):
                     pose_msg.y = float(center_y)
                     pose_msg.theta = angle
                     self.pose_pub.publish(pose_msg)
-                    print(f"ArUco ID: {id}, Center X: {pose_msg.x}, Center Y: {pose_msg.y}, Angle: {pose_msg.theta}")
+                    
 
         cv2.imshow('ProcessedImage', cv_image)
         cv2.waitKey(1)

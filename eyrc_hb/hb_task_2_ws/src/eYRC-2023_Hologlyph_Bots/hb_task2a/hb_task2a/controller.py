@@ -18,12 +18,12 @@
 '''
 
 
-# Team ID:		[ Team-ID ]
-# Author List:		[ Names of team members worked on this file separated by Comma: Name1, Name2, ... ]
-# Filename:		feedback.py
+# Team ID:		[HB-1476]
+# Author List:		[Mohit.K,Puran.Y]
+# Filename:		controller
 # Functions:
-#			[ Comma separated list of functions in this file ]
-# Nodes:		Add your publishing and subscribing node
+#			[Send_request,aruco_detector,inverse_kinematics,main]
+# Nodes:		[vel_left,vel_right,vel_rear,pose_sub]
 
 
 ################### IMPORT MODULES #######################
@@ -34,18 +34,15 @@ from rclpy.node import Node
 from geometry_msgs.msg import Pose2D
 from geometry_msgs.msg import Wrench
 from nav_msgs.msg import Odometry
-import time
 import math
-from tf_transformations import euler_from_quaternion
-from my_robot_interfaces.srv import NextGoal 
-import matplotlib.pyplot as plt            
-
+import time
+from my_robot_interfaces.srv import NextGoal
 # You can add more if required
 ##############################################################
 
 
 # Initialize Global variables
-margin_tol_linear = 1.0
+margin_tol_linear = 0.6
 x_values = []
 y_values = []
 
@@ -65,18 +62,16 @@ class HBController(Node):
         self.vel_right = self.create_publisher(Wrench,'/hb_bot_1/right_wheel_force',10)
         self.vel_rear = self.create_publisher(Wrench,'/hb_bot_1/rear_wheel_force',10)
         self.pose_sub = self.create_subscription(Pose2D,"/detected_aruco",self.aruco_pose,10)
-	    #	Use the below given topics to generate motion for the robot.
+	 #	Use the below given topics to generate motion for the robot.
 	    #   /hb_bot_1/left_wheel_force,
 	    #   /hb_bot_1/right_wheel_force,
-	    #   /hb_bot_1/left_wheel_force
+	    #   /hb_bot_1/left_wheel_force,
 
         self.x_a = 0
         self.y_a = 0
         self.theta = 0
-        self.kp_linear = 0.57     
-        self.kp_angular = 0.6
-        
-
+        self.kp= 0.5
+        self.kp_ang =1.0
         # For maintaining control loop rate.
         self.rate = self.create_rate(100)
 
@@ -110,7 +105,6 @@ class HBController(Node):
                                    [-2,-2.75,2],
                                    [4, 0,2]])
         c_speed = np.array([linear_x,linear_y,angular_z])
-        print(c_speed)
         w_speed =np.dot(inverse_matrix,c_speed)
         w1 = w_speed[0]
         w2 = w_speed[1]
@@ -150,41 +144,30 @@ def main(args=None):
                 error_fb_y = y_goal - hb_controller.y_a
                 error_fb_theta = theta_goal - hb_controller.theta
                 
-                linear_x = hb_controller.kp_linear * error_fb_x *3.4
-                linear_y = hb_controller.kp_linear * error_fb_y *3.4
-                angular_z = hb_controller.kp_angular * error_fb_theta * 10
-               
-        
-
+                linear_x = hb_controller.kp * error_fb_x *6.9
+                linear_y = hb_controller.kp * error_fb_y *6.9
+                angular_z = hb_controller.kp_ang * error_fb_theta * 4.8
+                
                 # Change the frame by using Rotation Matrix (If you find it required)
                 w1,w2,w3 = hb_controller.inverse_kinematics(linear_x,linear_y,angular_z)
 
-                print(f'w2:{w2},w1{w1},w3{w3} {hb_controller.theta}{error_fb_theta}')
-        
+                #print(f'x{error_fb_x},y{error_fb_y},th{error_fb_theta}')
+                #print(f"dist{d}")
+                #print(linear_x,linear_y,angular_z)
                 # Calculate the required velocity of bot for the next iteration(s)
                 
                 # Find the required force vectors for individual wheels from it.(Inverse Kinematics)
-                vel = Wrench()
                
-                    
-                # Apply appropriate force vectors
-                # Modify the condition to Switch to Next goal (given position in pixels instead of meters 
-                    
-                if abs(error_fb_x) < margin_tol_linear and abs(error_fb_y) < margin_tol_linear:
-                    
-                    """x_values.append(hb_controller.x_a)
-                    y_values.append(hb_controller.y_a)"""
-                    
-                    print(f"Goal{hb_controller.index} completed!")
-                    ############     DO NOT MODIFY THIS       #########
-                    hb_controller.index += 1
-                    if hb_controller.flag == 1 :
-                        """plt.scatter(x_values,y_values)
-                        print(f"x:{x_values}    y:{y_values}")
-                        plt.show()
-                        hb_controller.index = 0"""
-                    hb_controller.send_request(hb_controller.index)
-            ####################################################
+                vel = Wrench()
+                if abs(w1) > 120.0 or abs(w2) > 130.0 or abs(w3) > 120.0 :
+                    w1=w1/3
+                    w2=w2/3   
+                    w3=w3/3 
+                """elif abs(w1) < 20.0 or abs(w2) < 20.0 or abs(w3) < 20.0 :
+                    w1=w1*10
+                    w2=w2*10
+                    w3=w3*10"""
+
                 vel.force.y = w1
                 hb_controller.vel_left.publish(vel)
                 
@@ -193,7 +176,26 @@ def main(args=None):
                 
                 vel.force.y = w3
                 hb_controller.vel_rear.publish(vel)
-                
+                    
+                # Apply appropriate force vectors
+                # Modify the condition to Switch to Next goal (given position in pixels instead of meters 
+                    
+                if  abs(error_fb_x) < margin_tol_linear and abs(error_fb_y) < margin_tol_linear:
+                    
+                    """x_values.append(hb_controller.x_a)
+                    y_values.append(hb_controller.y_a)"""
+                    
+                    #print(f"Goal{hb_controller.index} completed!")
+                    ############     DO NOT MODIFY THIS       #########
+                    hb_controller.index += 1
+                    if hb_controller.flag == 1 :
+                        """plt.scatter(x_values,y_values)
+                        print(f"x:{x_values}    y:{y_values}")
+                        plt.show()"""
+                        hb_controller.index = 0
+                    hb_controller.send_request(hb_controller.index)
+            ####################################################
+                               
         # Spin once to process callbacks
         rclpy.spin_once(hb_controller)
     
