@@ -1,22 +1,3 @@
-#! /usr/bin/env python3
-
-'''
-*****************************************************************************************
-*
-*        		===============================================
-*           		Hologlyph Bots (HB) Theme (eYRC 2023-24)
-*        		===============================================
-*
-*  This script is to implement Task 2A of Hologlyph Bots (HB) Theme (eYRC 2023-24).
-*  
-*  This software is made available on an "AS IS WHERE IS BASIS".
-*  Licensee/end user indemnifies and will keep e-Yantra indemnified from
-*  any and all claim(s) that emanate from the use of the Software or 
-*  breach of the terms of this agreement.
-*
-*****************************************************************************************
-'''
-################### IMPORT MODULES #######################
 import rclpy
 import cv2
 import numpy as np
@@ -36,7 +17,11 @@ distCoeffs = np.array([0.0, 0.0, 0.0, 0.0, 0.0])
 class ArUcoDetector(Node):
     def __init__(self):
         super().__init__('aruco_detector')
-        self.prev_aruco1_position = None  # Initialize previous position to None
+        self.bottom_left = None
+        self.top_left = None
+        self.top_right = None
+        self.bottom_right = None
+
         self.subscription = self.create_subscription(
             Image,
             '/camera/image_raw',  # Replace with your image topic
@@ -67,22 +52,15 @@ class ArUcoDetector(Node):
                 cv2.circle(cv_image, (center_x, center_y), radius=4, color=(0, 0, 255), thickness=-1)
                 cv2.aruco.drawDetectedMarkers(cv_image, corners, ids)
 
-                if id == 1:  # Filter by ArUco marker ID, e.g., ID 1
-
-                    # Calculate the rotation angle
-                    rvec,tvec,_ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 1.0, cameraMatrix, distCoeffs)
-                    R = cv2.Rodrigues(rvec)[0]
-                    angle = np.arctan2(-R[1, 0], -R[0, 0]) 
-                    if angle < 0:
-                        angle += np.pi
-
-                    # Publish the detected ArUco ID, center, and rotation angle as a Pose2D message
-                    pose_msg = Pose2D()
-                    pose_msg.x = float(center_x)
-                    pose_msg.y = float(center_y)
-                    pose_msg.theta = angle
-                    self.pose_pub.publish(pose_msg)
-                    
+                if id in [4, 8, 10, 12]:
+                    if id == 4:
+                        self.bottom_left = marker_corners[0]
+                    elif id == 8:
+                        self.top_left = marker_corners[1]
+                    elif id == 10:
+                        self.top_right = marker_corners[2]
+                    elif id == 12:
+                        self.bottom_right = marker_corners[3]
 
         cv2.imshow('ProcessedImage', cv_image)
         cv2.waitKey(1)

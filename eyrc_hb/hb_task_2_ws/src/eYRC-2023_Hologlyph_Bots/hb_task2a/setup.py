@@ -28,6 +28,7 @@ setup(
             'feedback = hb_task2a.feedback:main',
             'hb_controller = hb_task2a.controller:main',
             'service_node = hb_task2a.service_node:main',
+            'test = hb_task2a.test:main'
          ],
     },
 )

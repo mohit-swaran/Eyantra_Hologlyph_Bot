@@ -1,0 +1,57 @@
+[3.227s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data
+[4.486s] running develop
+[4.487s] /home/mohit/.local/lib/python3.10/site-packages/setuptools/command/develop.py:40: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[4.487s] !!
+[4.487s] 
+[4.488s]         ********************************************************************************
+[4.488s]         Please avoid running ``setup.py`` and ``easy_install``.
+[4.488s]         Instead, use pypa/build, pypa/installer or other
+[4.488s]         standards-based tools.
+[4.488s] 
+[4.489s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[4.489s]         ********************************************************************************
+[4.489s] 
+[4.489s] !!
+[4.489s]   easy_install.initialize_options(self)
+[4.612s] /home/mohit/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[4.613s] !!
+[4.613s] 
+[4.613s]         ********************************************************************************
+[4.613s]         Please avoid running ``setup.py`` directly.
+[4.614s]         Instead, use pypa/build, pypa/installer or other
+[4.614s]         standards-based tools.
+[4.614s] 
+[4.615s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[4.618s]         ********************************************************************************
+[4.619s] 
+[4.620s] !!
+[4.620s]   self.initialize_options()
+[5.255s] running egg_info
+[5.255s] creating hb_task2b.egg-info
+[5.307s] writing hb_task2b.egg-info/PKG-INFO
+[5.308s] writing dependency_links to hb_task2b.egg-info/dependency_links.txt
+[5.309s] writing entry points to hb_task2b.egg-info/entry_points.txt
+[5.309s] writing requirements to hb_task2b.egg-info/requires.txt
+[5.310s] writing top-level names to hb_task2b.egg-info/top_level.txt
+[5.310s] writing manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[5.421s] reading manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[5.423s] writing manifest file 'hb_task2b.egg-info/SOURCES.txt'
+[5.480s] running build_ext
+[5.480s] Creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages/hb-task2b.egg-link (link to .)
+[5.484s] Installing controller script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[5.485s] Installing feedback2b script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[5.485s] Installing nextgoalpub script to /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/hb_task2b
+[5.485s] 
+[5.487s] Installed /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b
+[5.487s] running install_data
+[5.487s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index
+[5.488s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index
+[5.498s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index/packages
+[5.498s] copying resource/hb_task2b -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/ament_index/resource_index/packages
+[5.498s] copying package.xml -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b
+[5.498s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[5.499s] copying launch/controller.launch.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[5.499s] copying launch/task2b.launch.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[5.499s] copying launch/submission.launch.py -> /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/launch
+[5.499s] creating /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/scripts
+[5.756s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data

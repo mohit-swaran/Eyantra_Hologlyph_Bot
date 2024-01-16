@@ -1,3 +1,4 @@
 [console_scripts]
 controller = hb_task2b.bot_controller:main
+feedback2b = hb_task2b.feedback2b:main
 nextgoalpub = hb_task2b.nextGoalPub:main

@@ -1,0 +1,414 @@
+[1.741s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.741s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ff85b453250>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ff85b452650>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ff85b452650>>)
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.856s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.857s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mohit/eyrc_hb/hb_task_2_ws'
+[1.857s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.857s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.857s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.857s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.857s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.858s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.858s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.858s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.858s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.891s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.892s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['ignore', 'ignore_ament_install']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'ignore'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'ignore_ament_install'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['colcon_pkg']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'colcon_pkg'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['colcon_meta']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'colcon_meta'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['ros']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'ros'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['cmake', 'python']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'cmake'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'python'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extensions ['python_setup_py']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots) by extension 'python_setup_py'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extensions ['ignore', 'ignore_ament_install']
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extension 'ignore'
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extension 'ignore_ament_install'
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extensions ['colcon_pkg']
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extension 'colcon_pkg'
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extensions ['colcon_meta']
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extension 'colcon_meta'
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extensions ['ros']
+[1.896s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_bot) by extension 'ros'
+[1.900s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eYRC-2023_Hologlyph_Bots/hb_bot' with type 'ros.ament_cmake' and name 'hb_bot'
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extensions ['ignore', 'ignore_ament_install']
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extension 'ignore'
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extension 'ignore_ament_install'
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extensions ['colcon_pkg']
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extension 'colcon_pkg'
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extensions ['colcon_meta']
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extension 'colcon_meta'
+[1.900s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extensions ['ros']
+[1.901s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2a) by extension 'ros'
+[1.902s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eYRC-2023_Hologlyph_Bots/hb_task2a' with type 'ros.ament_python' and name 'hb_task2a'
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extensions ['ignore', 'ignore_ament_install']
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extension 'ignore'
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extension 'ignore_ament_install'
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extensions ['colcon_pkg']
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extension 'colcon_pkg'
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extensions ['colcon_meta']
+[1.902s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extension 'colcon_meta'
+[1.903s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extensions ['ros']
+[1.903s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_task2b) by extension 'ros'
+[1.904s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eYRC-2023_Hologlyph_Bots/hb_task2b' with type 'ros.ament_python' and name 'hb_task2b'
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extensions ['ignore', 'ignore_ament_install']
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extension 'ignore'
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extension 'ignore_ament_install'
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extensions ['colcon_pkg']
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extension 'colcon_pkg'
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extensions ['colcon_meta']
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extension 'colcon_meta'
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extensions ['ros']
+[1.904s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/hb_world) by extension 'ros'
+[1.905s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eYRC-2023_Hologlyph_Bots/hb_world' with type 'ros.ament_cmake' and name 'hb_world'
+[1.905s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.905s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extension 'ignore'
+[1.905s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extension 'ignore_ament_install'
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extensions ['colcon_pkg']
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extension 'colcon_pkg'
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extensions ['colcon_meta']
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extension 'colcon_meta'
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extensions ['ros']
+[1.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces) by extension 'ros'
+[1.906s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces' with type 'ros.ament_cmake' and name 'my_robot_interfaces'
+[1.906s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.907s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.907s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.907s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.907s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.069s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.069s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.099s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.099s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.099s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.099s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.099s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[2.100s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[2.100s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[2.100s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[2.128s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/mohit/eyrc_hb/hb_task1b_ws/install
+[2.156s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/mohit/eyrc_hb/hb_task_2_ws/install
+[2.184s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 282 installed packages in /opt/ros/humble
+[2.186s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_args' from command line to 'None'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_target' from command line to 'None'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_clean_cache' from command line to 'False'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_clean_first' from command line to 'False'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'cmake_force_configure' from command line to 'False'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'ament_cmake_args' from command line to 'None'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'catkin_cmake_args' from command line to 'None'
+[2.328s] Level 5:colcon.colcon_core.verb:set package 'hb_bot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.328s] DEBUG:colcon.colcon_core.verb:Building package 'hb_bot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot', 'merge_install': False, 'path': '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot', 'symlink_install': True, 'test_result_base': None}
+[2.368s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_args' from command line to 'None'
+[2.368s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_target' from command line to 'None'
+[2.368s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.368s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_clean_cache' from command line to 'False'
+[2.368s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_clean_first' from command line to 'False'
+[2.369s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'cmake_force_configure' from command line to 'False'
+[2.369s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'ament_cmake_args' from command line to 'None'
+[2.369s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'catkin_cmake_args' from command line to 'None'
+[2.369s] Level 5:colcon.colcon_core.verb:set package 'hb_task2a' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.369s] DEBUG:colcon.colcon_core.verb:Building package 'hb_task2a' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a', 'merge_install': False, 'path': '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a', 'symlink_install': True, 'test_result_base': None}
+[2.402s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_args' from command line to 'None'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_target' from command line to 'None'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_clean_cache' from command line to 'False'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_clean_first' from command line to 'False'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'cmake_force_configure' from command line to 'False'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'ament_cmake_args' from command line to 'None'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'catkin_cmake_args' from command line to 'None'
+[2.403s] Level 5:colcon.colcon_core.verb:set package 'hb_task2b' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.403s] DEBUG:colcon.colcon_core.verb:Building package 'hb_task2b' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b', 'merge_install': False, 'path': '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2b', 'symlink_install': True, 'test_result_base': None}
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_args' from command line to 'None'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_target' from command line to 'None'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_clean_cache' from command line to 'False'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_clean_first' from command line to 'False'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'cmake_force_configure' from command line to 'False'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'ament_cmake_args' from command line to 'None'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'catkin_cmake_args' from command line to 'None'
+[2.435s] Level 5:colcon.colcon_core.verb:set package 'hb_world' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.435s] DEBUG:colcon.colcon_core.verb:Building package 'hb_world' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world', 'merge_install': False, 'path': '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world', 'symlink_install': True, 'test_result_base': None}
+[2.465s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[2.465s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[2.466s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.466s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces', 'merge_install': False, 'path': '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces', 'symlink_install': True, 'test_result_base': None}
+[2.497s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.528s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.528s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot' with build type 'ament_cmake'
+[2.528s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot'
+[2.560s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.560s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.560s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.679s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a' with build type 'ament_python'
+[2.680s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2a', 'ament_prefix_path')
+[2.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/ament_prefix_path.ps1'
+[2.710s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/ament_prefix_path.dsv'
+[2.710s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/ament_prefix_path.sh'
+[2.738s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.738s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.845s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2b' with build type 'ament_python'
+[2.845s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2b', 'ament_prefix_path')
+[2.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/ament_prefix_path.ps1'
+[2.874s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/ament_prefix_path.dsv'
+[2.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/ament_prefix_path.sh'
+[2.899s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.899s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.006s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world' with build type 'ament_cmake'
+[3.007s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world'
+[3.036s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.036s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.144s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces' with build type 'ament_cmake'
+[3.145s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces'
+[3.170s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.170s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.285s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot
+[3.614s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2a'
+[3.642s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.642s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.060s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_task2b'
+[4.085s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.086s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.193s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world
+[4.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces
+[6.073s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data
+[6.111s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build --no-deps install_data
+[8.369s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2a', 'pythonpath_develop')
+[8.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/build --no-deps install_data
+[8.426s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/share/hb_task2a/hook/pythonpath_develop.ps1'
+[8.427s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/share/hb_task2a/hook/pythonpath_develop.dsv'
+[8.428s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2a/share/hb_task2a/hook/pythonpath_develop.sh'
+[8.480s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a' for CMake module files
+[8.481s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a' for CMake config files
+[8.482s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib'
+[8.483s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/bin'
+[8.483s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/pkgconfig/hb_task2a.pc'
+[8.484s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/lib/python3.10/site-packages'
+[8.484s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2a', 'pythonpath')
+[8.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/pythonpath.ps1'
+[8.534s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/pythonpath.dsv'
+[8.535s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/hook/pythonpath.sh'
+[8.536s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/bin'
+[8.537s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_task2a)
+[8.580s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/package.ps1'
+[8.582s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/package.dsv'
+[8.583s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/package.sh'
+[8.585s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/package.bash'
+[8.587s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/hb_task2a/package.zsh'
+[8.589s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a/share/colcon-core/packages/hb_task2a)
+[8.592s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2b', 'pythonpath_develop')
+[8.601s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b' returned '0': PYTHONPATH=/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/prefix_override:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/build --no-deps install_data
+[8.652s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/share/hb_task2b/hook/pythonpath_develop.ps1'
+[8.654s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/share/hb_task2b/hook/pythonpath_develop.dsv'
+[8.655s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_task2b/share/hb_task2b/hook/pythonpath_develop.sh'
+[8.711s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b' for CMake module files
+[8.713s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b' for CMake config files
+[8.714s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib'
+[8.714s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/bin'
+[8.714s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/pkgconfig/hb_task2b.pc'
+[8.715s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/lib/python3.10/site-packages'
+[8.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_task2b', 'pythonpath')
+[8.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/pythonpath.ps1'
+[8.772s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/pythonpath.dsv'
+[8.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/hook/pythonpath.sh'
+[8.774s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/bin'
+[8.774s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_task2b)
+[8.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/package.ps1'
+[8.833s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/package.dsv'
+[8.836s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/package.sh'
+[8.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/package.bash'
+[8.838s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/hb_task2b/package.zsh'
+[8.838s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b/share/colcon-core/packages/hb_task2b)
+[11.402s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/my_robot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces
+[11.408s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces -- -j8 -l8
+[13.344s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_world -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world
+[13.346s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world -- -j8 -l8
+[13.355s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot
+[13.356s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[13.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[13.525s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world -- -j8 -l8
+[13.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world
+[13.640s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot
+[14.969s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_world)
+[14.981s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_world
+[15.118s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' for CMake module files
+[15.120s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' for CMake config files
+[15.121s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_world', 'cmake_prefix_path')
+[15.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.ps1'
+[15.196s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.dsv'
+[15.197s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.sh'
+[15.198s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib'
+[15.199s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/bin'
+[15.200s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib/pkgconfig/hb_world.pc'
+[15.200s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib/python3.10/site-packages'
+[15.201s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/bin'
+[15.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.ps1'
+[15.277s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.dsv'
+[15.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.sh'
+[15.279s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.bash'
+[15.284s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.zsh'
+[15.285s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/colcon-core/packages/hb_world)
+[15.486s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_world)
+[15.562s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' for CMake module files
+[15.565s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world' for CMake config files
+[15.567s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_world', 'cmake_prefix_path')
+[15.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.ps1'
+[15.629s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.dsv'
+[15.630s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/hook/cmake_prefix_path.sh'
+[15.631s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib'
+[15.632s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/bin'
+[15.632s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib/pkgconfig/hb_world.pc'
+[15.632s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/lib/python3.10/site-packages'
+[15.633s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/bin'
+[15.697s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.ps1'
+[15.698s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.dsv'
+[15.700s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.sh'
+[15.701s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.bash'
+[15.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/hb_world/package.zsh'
+[15.703s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_world/share/colcon-core/packages/hb_world)
+[15.706s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_bot)
+[15.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot
+[15.797s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' for CMake module files
+[15.799s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' for CMake config files
+[15.800s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_bot', 'cmake_prefix_path')
+[15.896s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.ps1'
+[15.898s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.dsv'
+[15.903s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.sh'
+[15.905s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib'
+[15.906s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/bin'
+[15.906s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib/pkgconfig/hb_bot.pc'
+[15.907s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib/python3.10/site-packages'
+[15.907s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/bin'
+[16.087s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.ps1'
+[16.089s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv'
+[16.091s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.sh'
+[16.092s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.bash'
+[16.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.zsh'
+[16.094s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/colcon-core/packages/hb_bot)
+[16.433s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hb_bot)
+[16.575s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' for CMake module files
+[16.577s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot' for CMake config files
+[16.578s] Level 1:colcon.colcon_core.shell:create_environment_hook('hb_bot', 'cmake_prefix_path')
+[16.731s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.ps1'
+[16.773s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.dsv'
+[16.777s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/hook/cmake_prefix_path.sh'
+[16.779s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib'
+[16.779s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/bin'
+[16.779s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib/pkgconfig/hb_bot.pc'
+[16.780s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/lib/python3.10/site-packages'
+[16.781s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/bin'
+[16.935s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.ps1'
+[16.937s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv'
+[16.938s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.sh'
+[16.940s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.bash'
+[16.941s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.zsh'
+[16.942s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/colcon-core/packages/hb_bot)
+[21.090s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces -- -j8 -l8
+[21.273s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces
+[22.707s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_interfaces)
+[22.708s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/my_robot_interfaces
+[22.732s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' for CMake module files
+[22.734s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' for CMake config files
+[22.736s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'cmake_prefix_path')
+[22.761s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.ps1'
+[22.762s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.dsv'
+[22.762s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.sh'
+[22.763s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib'
+[22.763s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'ld_library_path_lib')
+[22.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.ps1'
+[22.791s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.dsv'
+[22.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.sh'
+[22.792s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/bin'
+[22.792s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib/pkgconfig/my_robot_interfaces.pc'
+[22.793s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib/python3.10/site-packages'
+[22.793s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/bin'
+[22.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.ps1'
+[22.821s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv'
+[22.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.sh'
+[22.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.bash'
+[22.823s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.zsh'
+[22.823s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/colcon-core/packages/my_robot_interfaces)
+[23.000s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_interfaces)
+[23.025s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' for CMake module files
+[23.026s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces' for CMake config files
+[23.027s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'cmake_prefix_path')
+[23.051s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.ps1'
+[23.052s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.dsv'
+[23.052s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.sh'
+[23.053s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib'
+[23.054s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'ld_library_path_lib')
+[23.079s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.ps1'
+[23.080s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.dsv'
+[23.080s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.sh'
+[23.081s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/bin'
+[23.081s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib/pkgconfig/my_robot_interfaces.pc'
+[23.081s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/lib/python3.10/site-packages'
+[23.081s] Level 1:colcon.colcon_core.environment:checking '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/bin'
+[23.107s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.ps1'
+[23.108s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv'
+[23.108s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.sh'
+[23.109s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.bash'
+[23.109s] INFO:colcon.colcon_core.shell:Creating package script '/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.zsh'
+[23.110s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mohit/eyrc_hb/hb_task_2_ws/install/my_robot_interfaces/share/colcon-core/packages/my_robot_interfaces)
+[23.110s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[23.110s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[23.111s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[23.111s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[23.147s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[23.147s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[23.147s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[23.166s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[23.202s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohit/eyrc_hb/hb_task_2_ws/install/local_setup.ps1'
+[23.203s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mohit/eyrc_hb/hb_task_2_ws/install/_local_setup_util_ps1.py'
+[23.205s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohit/eyrc_hb/hb_task_2_ws/install/setup.ps1'
+[23.231s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohit/eyrc_hb/hb_task_2_ws/install/local_setup.sh'
+[23.231s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mohit/eyrc_hb/hb_task_2_ws/install/_local_setup_util_sh.py'
+[23.232s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohit/eyrc_hb/hb_task_2_ws/install/setup.sh'
+[23.258s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohit/eyrc_hb/hb_task_2_ws/install/local_setup.bash'
+[23.259s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohit/eyrc_hb/hb_task_2_ws/install/setup.bash'
+[23.284s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mohit/eyrc_hb/hb_task_2_ws/install/local_setup.zsh'
+[23.285s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mohit/eyrc_hb/hb_task_2_ws/install/setup.zsh'

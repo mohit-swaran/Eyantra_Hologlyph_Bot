@@ -189,14 +189,14 @@ def main(args=None):
 
     if random_shape_function_name   == "generate_rectangle":
         shape_data = generate_rectangle()
-    elif random_shape_function_name == "generate_square":
+    """elif random_shape_function_name == "generate_square":
         shape_data = generate_square()
     elif random_shape_function_name == "generate_triangle":
         shape_data = generate_triangle()
     elif random_shape_function_name == "generate_hexagon":
         shape_data = generate_hexagon()
     elif random_shape_function_name == "generate_decagon":
-        shape_data = generate_decagon()
+        shape_data = generate_decagon()"""
 
     service_node.shape_list = [random_shape_function_name, shape_data]
     rclpy.spin(service_node)

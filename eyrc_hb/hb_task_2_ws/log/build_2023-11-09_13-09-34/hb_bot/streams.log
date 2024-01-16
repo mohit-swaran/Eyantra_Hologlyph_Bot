@@ -1,0 +1,81 @@
+[0.756s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot
+[1.680s] -- The C compiler identification is GNU 11.4.0
+[2.361s] -- The CXX compiler identification is GNU 11.4.0
+[2.411s] -- Detecting C compiler ABI info
+[2.748s] -- Detecting C compiler ABI info - done
+[2.775s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.775s] -- Detecting C compile features
+[2.797s] -- Detecting C compile features - done
+[2.814s] -- Detecting CXX compiler ABI info
+[3.151s] -- Detecting CXX compiler ABI info - done
+[3.204s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.205s] -- Detecting CXX compile features
+[3.209s] -- Detecting CXX compile features - done
+[3.327s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.902s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[5.311s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.655s] -- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)
+[6.072s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[6.076s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[6.124s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[6.220s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[6.302s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.702s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[6.714s] -- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[7.229s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[7.287s] -- Found FastRTPS: /opt/ros/humble/include  
+[7.388s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[7.491s] -- Looking for pthread.h
+[7.855s] -- Looking for pthread.h - found
+[7.856s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[8.167s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[8.169s] -- Found Threads: TRUE  
+[8.831s] -- Found rclpy: 3.3.10 (/opt/ros/humble/share/rclpy/cmake)
+[8.917s] -- Found urdf: 2.6.0 (/opt/ros/humble/share/urdf/cmake)
+[10.329s] -- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+[10.389s] -- Found ament_lint_auto: 0.12.8 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[10.726s] -- Added test 'flake8' to check Python code syntax and style conventions
+[10.729s] -- Added test 'lint_cmake' to check CMake code style
+[10.731s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[10.735s] -- Added test 'xmllint' to check XML markup files
+[10.739s] -- Configuring done
+[10.757s] -- Generating done
+[10.764s] -- Build files have been written to: /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot
+[10.826s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake /home/mohit/eyrc_hb/hb_task_2_ws/src/eYRC-2023_Hologlyph_Bots/hb_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot
+[10.827s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[10.978s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --build /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot -- -j8 -l8
+[11.111s] Invoking command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot
+[11.131s] -- Install configuration: ""
+[11.131s] -- Execute custom install script
+[11.132s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/Spawn_bot.launch.py
+[11.166s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//launch/multi_bot_spawn.launch.py
+[11.210s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.dae
+[11.240s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg
+[11.282s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_1.jpg.001.jpg
+[11.326s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.dae
+[11.373s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg
+[11.397s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_2.jpg.001.jpg
+[11.437s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.dae
+[11.514s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg
+[11.574s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/bot_3.jpg.001.jpg
+[11.624s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//meshes/wheel.stl
+[11.664s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_1.urdf.xacro
+[11.743s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_2.urdf.xacro
+[11.779s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/hb_bot_3.urdf.xacro
+[11.880s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot//urdf/materials.xacro
+[11.942s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/package_run_dependencies/hb_bot
+[11.988s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/parent_prefix_path/hb_bot
+[12.081s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.sh
+[12.152s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/ament_prefix_path.dsv
+[12.199s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.sh
+[12.237s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/environment/path.dsv
+[12.300s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.bash
+[12.364s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.sh
+[12.486s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.zsh
+[12.548s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/local_setup.dsv
+[12.628s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.dsv
+[12.687s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/ament_index/resource_index/packages/hb_bot
+[12.763s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig.cmake
+[12.834s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/cmake/hb_botConfig-version.cmake
+[12.864s] -- Symlinking: /home/mohit/eyrc_hb/hb_task_2_ws/install/hb_bot/share/hb_bot/package.xml
+[13.178s] Invoked command in '/home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mohit/eyrc_hb/hb_task1b_ws/install/hb_task_1b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2b:/home/mohit/eyrc_hb/hb_task_2_ws/install/hb_task2a:/opt/ros/humble /usr/bin/cmake --install /home/mohit/eyrc_hb/hb_task_2_ws/build/hb_bot

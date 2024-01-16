@@ -1,9 +1,12 @@
 package.xml
 setup.cfg
 setup.py
+hb_task2b/Red_feedback.py
 hb_task2b/__init__.py
 hb_task2b/bot_controller.py
+hb_task2b/feedback2b.py
 hb_task2b/nextGoalPub.py
+hb_task2b/test.py
 hb_task2b.egg-info/PKG-INFO
 hb_task2b.egg-info/SOURCES.txt
 hb_task2b.egg-info/dependency_links.txt
